@@ -1,0 +1,156 @@
+/*-------------------------
+   Footer Styles
+-------------------------*/
+
+.footer-social-link {
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 -5px;
+
+        li {
+            a {
+                color: var(--color-gray-3);
+                font-size: 30px;
+                padding: 5px;
+
+                @media only screen and (max-width: 991px) {
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    color: var(--color-link);
+                }
+            }
+        }
+    }
+}
+
+
+
+.footer-bottom {
+    border-top: 1px solid var(--color-ghost);
+    padding: 25px 0;
+}
+
+.footer-copyright {
+    @media only screen and (max-width: 767px) {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .copyright-text {
+        color: var(--color-gray-1);
+
+        a {
+            color: var(--color-gray-1);
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+.footer-bottom-link {
+    text-align: right;
+
+    @media only screen and (max-width: 767px) {
+        text-align: center;
+    }
+
+}
+
+.footer-dark {
+    background-color: var(--color-dark);
+    padding-top: 0;
+
+    .footer-bottom {
+        border-top-color: var(--color-body);
+    }
+
+    .footer-copyright {
+        .copyright-text {
+            color: var(--color-gray-2);
+
+            a {
+                color: var(--color-gray-2);
+
+                &:hover {
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}
+
+/*-------------------------
+   Call To Action
+-------------------------*/
+.call-to-action-area {
+    padding: 140px 0 0;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: 1199px) {
+        padding: 100px 0 0;
+    }
+
+    @media only screen and (max-width: 991px) {
+        padding: 80px 0 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 60px 0 0;
+    }
+
+    &:before {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: var(--color-dark);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        @media only screen and (max-width: 991px) {
+            height: 500px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            height: 480px;
+        }
+
+        @media only screen and (max-width: 575px) {
+            height: 400px;
+        }
+    }
+}
+
+.call-to-action {
+    border-bottom: 1px solid #e7e7e7;
+
+    .section-heading {
+        margin-bottom: 65px;
+
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 50px;
+        }
+
+        span {
+            color: var(--color-accent1);
+        }
+
+        .title {
+            width: 60%;
+            margin: 0 auto 55px;
+
+            @media only screen and (max-width: 991px) {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+.team-grid {
+    text-align: center;
+    margin-bottom: 80px;
+
+    .thumbnail {
+        margin-bottom: 30px;
+        display: inline-block;
+        max-width: 128px;
+
+        a {
+            position: relative;
+
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .content {
+        .title {
+            color: var(--color-white);
+            margin-bottom: 10px;
+        }
+
+        .designation {
+            display: block;
+            color: var(--color-gray-2);
+        }
+    }
+
+    &:hover,
+    &.active {
+        .thumbnail {
+            a {
+                &:after {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}
+
+.team-details-thumb {
+    img {
+        border-radius: 10px;
+    }
+}
+

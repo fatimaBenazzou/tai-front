@@ -1,0 +1,642 @@
+html,
+body,
+.App {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+/*-------------------------
+    Variables
+-------------------------*/
+:root {
+  // Color
+  --color-primary: #5956E9;
+--color-white: #ffffff;
+--color-black: #000000;
+--color-light: #ECF2F6;
+--color-dark: #27272E;
+--color-text-dark: #292930;
+--color-accent1: #FFDC60;
+--color-accent2: #FAB8C4;
+
+--color-blue-shade: #6865FF;
+--color-link: #2522BA;
+--color-mabel: #DBF8FF;
+--color-fog: #DBDEFF;
+--color-pink-shade: #FFD3DB;
+--color-peach: #FFEDDC;
+--color-rose: #C75C6F;
+
+--color-chart1: #896BA7;
+--color-chart2: #BADEFF;
+
+--color-body: #525260;
+--color-gray-1: #757589;
+--color-gray-2: #999FAE;
+--color-gray-3: #999AB8;
+--color-gray-4: #99A1AA;
+--color-ship-gray: #42424A;
+--color-ghost: #C7C7D5;
+--color-mercury: #E5E5E5;
+
+  --tai-main: #C28AEB;
+  --tai-secondary: #5961F9;
+
+
+  // Gradient Color
+  --main-gradient: linear-gradient(135deg, #5961F9 28.41%, #EE9AE5 116.69%);
+
+
+
+  // Border
+  --border-light: 1px solid #E3E6E9;
+  --border-lighter: 1px solid #ECF2F6;
+  --border-dark: 1px solid var(--color-ship-gray);
+  --border-gray: 1px solid var(--color-gray-4);
+
+
+  //Font Family
+  --font-primary: 'DM Sans', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+  --font-awesome: 'Font Awesome 5 Pro';
+
+  // Transition
+  --transition: all 0.3s ease-in-out;
+
+  //Fonts Size
+  --font-body-1: 20px;
+  --font-body-2: 16px;
+  --font-body-3: 14px;
+  --font-body-4: 12px;
+
+  // Line Height
+  --line-height-b1: 1.5;
+  --line-height-b3: 1.1;
+
+  // Heading Font 
+  --h1: 80px;
+  --h2: 64px;
+  --h3: 48px;
+  --h4: 32px;
+  --h5: 24px;
+  --h6: 20px;
+  
+  // Layouts Variation
+  --smlg-device: 'only screen and (max-width: 1199px)';
+  --extra-device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+  --laptop-device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+  --lg-layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+  --md-layout: 'only screen and (max-width: 991px)';
+  --sm-layout: 'only screen and (max-width: 767px)';
+  --large-mobile: 'only screen and (max-width: 575px)';
+  --small-mobile: 'only screen and (max-width: 479px)';
+  
+
+
+}
+
+
+/*-------------------------
+    Reset Styels
+-------------------------*/
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+span {
+  display: inline-block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ul.list-style,
+ol.list-style {
+  margin: -10px 0;
+
+  li {
+      margin: 10px 0;
+
+      &::marker {
+          color: var(--color-primary);
+      }
+  }
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+// Grid
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .container {
+      max-width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+  }
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+
+  >[class*="col"] {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  &.g-0 {
+      margin-left: 0;
+      margin-right: 0;
+
+      >[class*="col"] {
+          padding-left: 0;
+          padding-right: 0;
+      }
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .row-35 {
+      margin-left: -35px;
+      margin-right: -35px;
+
+      >[class*="col"] {
+          padding-left: 35px;
+          padding-right: 35px;
+      }
+  }
+
+  .row-40 {
+      margin-left: -40px;
+      margin-right: -40px;
+
+      >[class*="col"] {
+          padding-left: 40px;
+          padding-right: 40px;
+      }
+  }
+
+  .row-45 {
+      margin-left: -45px;
+      margin-right: -45px;
+
+      >[class*="col"] {
+          padding-left: 45px;
+          padding-right: 45px;
+      }
+  }
+}
+
+/*-------------------------
+    Typography
+-------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: var(--font-secondary);
+  font-size: var(--font-body-2);
+  line-height: var(--line-height-b1);
+  color: var(--color-body);
+  font-weight: 400;
+  height: 100%;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+address,
+p,
+pre,
+blockquote,
+table,
+hr {
+  margin: 0 0 30px 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--color-text-dark);
+}
+
+
+h1,
+.h1 {
+  font-size: var(--h1);
+  line-height: 1.2;
+
+  @media only screen and (max-width: 991px){
+      font-size: 68px;
+  }
+
+  @media only screen and (max-width: 1199px){
+      font-size: 68px;
+  }
+
+  @media only screen and (max-width: 767px){
+      font-size: 48px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: var(--h2);
+  line-height: 1.2;
+
+  @media only screen and (max-width: 991px){
+      font-size: 56px;
+  }
+
+  @media only screen and (max-width: 1199px){
+      font-size: 56px;
+  }
+
+  @media only screen and (max-width: 767px){
+      font-size: 38px;
+  }
+
+  @media only screen and (max-width: 767px){
+      font-size: 34px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: var(--h3);
+  line-height: 1.2;
+
+  @media only screen and (max-width: 991px){
+      font-size: 40px;
+  }
+
+  @media only screen and (max-width: 1199px){
+      font-size: 36px;
+  }
+
+  @media only screen and (max-width: 767px){
+      font-size: 32px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: var(--h4);
+  line-height: 1.2;
+
+  @media only screen and (max-width: 991px){
+      font-size: 26px;
+  }
+
+  @media only screen and (max-width: 767px){
+      font-size: 20px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: var(--h5);
+  line-height: 1.4;
+
+  @media only screen and (max-width: 767px){
+      font-size: 20px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: var(--h6);
+  line-height: 1.2;
+
+  @media only screen and (max-width: 767px){
+      font-size: 18px;
+  }
+}
+
+
+p {
+  font-size: var(--font-body-2);
+  line-height: var(--line-height-b1);
+  margin: 0 0 40px 0;
+}
+
+.body-font1 {
+  font-size: var(--font-body-1);
+  line-height: var(--line-height-b1);
+}
+
+.body-font2 {
+  font-size: var(--font-body-2);
+  line-height: var(--line-height-b1);
+}
+
+.body-font3 {
+  font-size: var(--font-body-3);
+  line-height: var(--line-height-b3);
+}
+
+.body-font4 {
+  font-size: var(--font-body-4);
+  line-height: var(--line-height-b3);
+}
+
+/*-------------------------
+  Helper Classes
+-------------------------*/
+
+.bg-color-dark {
+  background-color: var(--color-dark);
+}
+
+.bg-color-light {
+  background-color: var(--color-light);
+}
+
+.bg-color-mercury {
+  background-color: var(--color-mercury);
+}
+
+.bg-color-ship-gray {
+  background-color: var(--color-ship-gray);
+}
+
+// Color
+.color-gray-4 {
+  color: var(--color-gray-4);
+}
+
+// Opacity
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/*-------------------------
+  Section Space
+-------------------------*/
+.section-padding {
+  padding: 140px 0 110px;
+
+  @media only screen and (max-width: 1199px){
+      padding: 100px 0 70px;
+  }
+
+  @media only screen and (max-width: 991px){
+      padding: 80px 0 50px;
+  }
+
+  @media only screen and (max-width: 767px){
+      padding: 60px 0 30px;
+  }
+}
+
+.section-padding-2 {
+  padding: 140px 0 100px;
+
+  @media only screen and (max-width: 1199px){
+      padding: 100px 0 60px;
+  }
+
+  @media only screen and (max-width: 991px){
+      padding: 80px 0 40px;
+  }
+
+  @media only screen and (max-width: 767px){
+      padding: 60px 0 20px;
+  }
+}
+
+.section-padding-equal {
+  padding: 140px 0;
+
+  @media only screen and (max-width: 1199px){
+      padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 991px){
+      padding: 80px 0;
+  }
+
+  @media only screen and (max-width: 767px){
+      padding: 60px 0;
+  }
+}
+
+// Margin
+
+.mt--200 {
+  margin-top: 200px;
+}
+
+.mt--150 {
+  margin-top: 150px;
+}
+
+.mt--100 {
+  margin-top: 100px;
+}
+
+.mt--90 {
+  margin-top: 90px;
+}
+
+.mt--80 {
+  margin-top: 80px;
+}
+
+.mt--20 {
+  margin-top: 20px !important;
+}
+
+.mb--100 {
+  margin-bottom: 100px;
+}
+
+.mb--90 {
+  margin-bottom: 90px;
+}
+
+.mb--80 {
+  margin-bottom: 80px !important;
+}
+
+.mb--50 {
+  margin-bottom: 50px !important;
+}
+
+.mb--40 {
+  margin-bottom: 40px !important;
+}
+
+.mb--30 {
+  margin-bottom: 30px !important;
+}
+
+.mb--20 {
+  margin-bottom: 20px !important;
+}
+
+.ml--20 {
+  margin-left: 20px !important;
+}
+
+
+// Padding
+.pt--250 {
+  padding-top: 250px;
+}
+
+.pt--200 {
+  padding-top: 200px;
+}
+
+.pt--150 {
+  padding-top: 150px;
+}
+
+.pb--90 {
+  padding-bottom: 90px;
+}
+
+.pb--80 {
+  padding-bottom: 80px;
+}
+
+.pb--70 {
+  padding-bottom: 70px;
+}
+
+.plr--30 {
+  padding: 0 30px;
+}
+
+@media only screen and (max-width: 1199px){
+  .pt_lg--200 {
+      padding-top: 200px;
+  }
+
+  .pt_lg--100 {
+      padding-top: 100px;
+  }
+
+  .pb_lg--40 {
+      padding-bottom: 40px;
+  }
+
+  .pb_lg--20 {
+      padding-bottom: 20px;
+  }
+}
+
+
+@media only screen and (max-width: 991px){
+  .mb_md--70 {
+      margin-bottom: 70px;
+  }
+
+  .mb_md--30 {
+      margin-bottom: 30px;
+  }
+
+  .pt_md--100 {
+      padding-top: 100px;
+  }
+
+  .pt_md--80 {
+      padding-top: 80px;
+  }
+
+  .pb_md--70 {
+      padding-bottom: 70px;
+  }
+
+  .pb_md--20 {
+      padding-bottom: 20px;
+  }
+
+  .mt_md--0 {
+      margin-top: 0;
+  }
+
+  .mb_md--0 {
+      margin-bottom: 0;
+  }
+
+  .pb_md--0 {
+      padding-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  .pt_sm--80 {
+      padding-top: 80px;
+  }
+
+  .pt_sm--60 {
+      padding-top: 60px;
+  }
+
+  .pb_sm--0 {
+      padding-bottom: 0;
+  }
+}
+
+.progresse {
+  position: absolute;
+  z-index: -1;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

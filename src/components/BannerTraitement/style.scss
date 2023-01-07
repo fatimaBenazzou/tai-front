@@ -1,0 +1,43 @@
+.traitement {
+    border-radius: 0;
+    background: none;  
+    .titleT {
+        font-size: 58px;
+        line-height: 1;
+        color: var(--color-dark);
+        margin-top: 10rem;
+
+        @media only screen and (min-width: 1200px) and (max-width: 1599px) {
+            font-size: 46px;
+        }
+
+        @media only screen and (max-width: 1199px) {
+            font-size: 40px;
+        }
+
+        @media only screen and (max-width: 991px) {
+            font-size: 35px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+        }
+    }
+
+    .subtitleT {
+        font-size: var(--font-body-1);
+        margin-bottom: 40px;
+        width: 90%;
+        color: var(--color-ghost);
+    }
+}
+
+.methode {
+    .title {
+        text-align: center;
+    }
+}
+
+video {
+    border-radius: 25px;
+}
